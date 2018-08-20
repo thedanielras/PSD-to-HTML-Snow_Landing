@@ -1,0 +1,580 @@
+@import "vars"
+@import "libs"
+@import "fonts"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: #FFF
+	color: rgba(0,0,0,.9)
+
+body
+	font-size: 16px
+	min-width: 320px
+	max-width: 100vw
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	-webkit-font-smoothing: antialiased
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+/*********************************  Main Header Style ************************************/
+.main-header
+	background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), url(../img/header/bg.jpeg)
+	background-size: cover
+	background-position: center
+	height: 100vh
+	color: #FFF
+	text-align: center
+	white-space: nowrap
+	position: relative
+
+.wrapper 
+	width: 1170px
+	margin: 0 auto
+
+.top-line
+	padding-top: 38px
+	width: 100%
+	text-align: left
+	position: relative
+
+	.hamburger 
+		position: absolute
+		left: 100%
+		top: 0
+		transform: translate(-100%, 31px)
+		outline: none
+		z-index: 3
+
+.is-black
+	background: #000
+	transition: color 0.25s
+	&:before
+		background: #000
+		transition: color 0.25s
+	&:after
+		background: #000
+		transition: color 0.25s
+
+a
+	text-decoration: none
+	text-transform: uppercase
+
+li
+	list-style-type: none
+
+.main-nav
+	display: flex
+	background: rgba(255,255,255,.94)
+	width: 100%
+	height: 100vh
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 2
+	transform: translateX(-100%)
+	transition: transform .5s ease
+
+.show 
+	transform: none
+	transition: .5s ease
+
+.navigation
+	text-align: center
+	margin: 0
+	margin: auto
+	a
+		color: #000
+		font-size: 50px
+		padding: 5px
+		margin: 5px
+		display: inline-block
+
+.main-header__text
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	font-family: 'Playfair Display', serif
+	&_desc 
+		font-weight: bold
+		text-transform: uppercase
+		font-family: "Work Sans", sans-serif
+		font-size: 14px
+	&_main 
+		font-weight: bold
+		font-size: 48px
+		margin: 0
+		.text-italic
+			font-style: italic
+			font-weight: normal
+
+.main-header__button
+	position: absolute
+	display: inline-block
+	top: calc(100% - 65px)
+	left: 50%
+	transform: translate(-50%, -50%)
+	width: 50px
+	height: 50px
+	border-radius: 50%
+	border: 1px solid #bebebe
+
+	.fas
+		position: absolute
+		left: 50%
+		top: 50%
+		font-size: 15px
+		transform: translate(-50%, -50%)
+		color: #bebebe
+
+.about-section
+	text-align: center
+
+.about-section_title
+	margin: 0
+	padding-top: 95px
+	font-family: "Playfair Display", sans-serif
+	font-weight: bold
+	font-size: 38px
+
+.about-section_text
+	color: #5f5f5f
+	font-size: 15px
+	width: 750px
+	margin: 0 auto
+	margin-top: 40px
+
+.about-section_signature
+	margin-top: 40px
+	margin-bottom: 100px
+
+.numbers-section
+	background-image: url("../img/numbers/bg.png")
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	.wrapper
+		display: flex
+		justify-content: space-between
+
+
+.numbers-section__card
+	padding-top: 120px
+	padding-bottom: 100px
+	color: #FFF
+	display: flex
+	align-items: center
+	img 
+		margin-right: 30px
+		height: 37px
+
+	span
+		display: inline-block
+		text-transform: uppercase
+		font-size: 14px
+
+.projects-section
+	text-align: center
+	margin-bottom: 100px
+
+.projects-section_heading
+	margin: 0
+	padding-top: 95px
+	font-family: "Playfair Display", sans-serif
+	font-weight: bold
+	font-size: 38px
+
+.projects-section_text 
+	color: #5f5f5f
+	font-size: 15px
+	width: 750px
+	margin: 0 auto
+	margin-top: 43px
+
+.projects-section__grid-container
+	margin-top: 60px
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr
+	grid-template-rows: 1fr 1fr 1fr 1fr
+	grid-column-gap: 30px
+	grid-row-gap: 30px
+
+	.projects-section_project
+		background: #d9d9d9
+		min-height: 250px
+		width: 370px
+		background-size: cover
+		background-position: center
+		&:hover
+			cursor: pointer
+			opacity: .9
+			transition: opacity .25 ease
+
+.projects-section__grid-container .middle-tile
+	background: #FFF
+	display: flex
+	flex-direction: column
+	justify-content: center
+	line-height: 1
+	
+	&_heading
+		font-family: "Playfair Display", sans-serif
+		font-weight: bold
+		font-size: 24px
+		margin: 0
+
+
+	&_text
+		font-size: 14px
+		padding-top: 25px
+		font-weight: 600
+
+.quotes-section 
+	background-image: url("../img/numbers/bg.png")
+	background-size: cover
+	background-position: center
+	color: #FFF
+	padding-top: 175px
+
+.quotes-section .owl-buttons
+	display: flex
+	justify-content: center
+	align-items: center
+	button.owl-dot
+		width: 6px
+		height: 6px
+		padding: 0
+		margin: 0
+		margin-right: 9px
+		margin-bottom: 60px
+		border-radius: 50%
+		border: none
+		background: #5b5b5b
+	button.active
+		width: 10px
+		height: 10px
+		background: #FFF
+
+.quotes-section_quote
+	text-align: center
+	margin: 0 auto
+	&_text
+		font-family: "Playfair Display", sans-serif
+		font-size: 24px
+		font-style: italic
+		width: 710px
+		margin: 0 auto
+	
+	&_author
+		font-size: 14px
+		font-weight: 600
+		display: block
+		text-transform: uppercase
+		margin-top: 35px
+		padding-bottom: 110px
+
+.clients-section .clients-carousel .owl-nav
+	display: none
+
+.clients-section
+	.wrapper
+		margin-top: 90px
+		margin-bottom: 70px
+		img
+			display: inline-block
+
+.clients-carousel
+	overflow-x: hidden
+	cursor: grab
+	width: 1175px
+
+	& img
+		margin-right: 110px
+		user-select: none
+	.owl-stage
+		display: flex
+
+.blog-section
+	text-align: center
+	background: #f6f6f6
+	button.owl-prev, button.owl-next
+		display: none
+	.blog-section_heading
+		font-family: "Playfair Display", sans-serif
+		font-weight: bold
+		font-size: 38px
+		margin: 0
+		padding-top: 100px
+	.blog-section_text
+		font-size: 14px
+		padding-top: 40px
+		color: #5f5f5f
+
+.blog-section__blogpost-carousel_blog-card
+	width: 370px
+	margin-top: 60px
+	margin-bottom: 60px
+	background: #FFF
+	box-shadow: 1px 1px 5px rgba(0,0,0,.05)
+	min-height: 460px
+	.blog-card_image
+		height: 240px
+		background-size: cover
+		background-position: center
+		position: relative
+		.label
+			display: inline-block
+			position: absolute
+			bottom: 10px
+			left: 10px
+			background: #000
+			color: #FFF
+			font-weight: 600
+			font-size: 12px
+			text-transform: uppercase
+			padding: 11px 22px
+	.blog-card__text
+		padding-top: 25px
+		padding-left: 30px
+		padding-bottom: 30px
+		text-align: left
+		.blog-card_heading
+			font-family: "Playfair Display", sans-serif
+			font-weight: bold
+			font-size: 20px
+			margin: 0
+		.blog-card_date
+			font-weight: 600
+			font-size: 12px
+			line-height: 1
+			margin-top: 20px
+			display: inline-block
+			text-transform: uppercase
+		.blog-card_paragraph
+			font-size: 15px
+			color: #5f5f5f
+			margin: 0
+			margin-top: 20px
+	
+.blogpost-carousel_owl-buttons
+	padding-bottom: 100px
+	border-bottom: 1px solid #ececec
+	button.owl-dot
+			width: 6px
+			height: 6px
+			padding: 0
+			margin: 0
+			margin-right: 9px
+			margin-bottom: 60px
+			border-radius: 50%
+			border: none
+			background: #d1d1d1
+	button.active
+		width: 10px
+		height: 10px
+		background: #171717
+
+.blog-section__blogpost-carousel
+	overflow-x: hidden
+	cursor: grab
+	display: flex
+	&_blog-card
+		margin-right: 15px
+		margin-left: 15px
+	.owl-stage
+		display: flex
+
+.contact-section
+	background: #f6f6f6
+	.row
+		padding-top: 110px
+		.contact-section_info_heading
+			font-family: "Playfair Display", sans-serif
+			font-weight: bold
+			font-size: 38px
+			margin: 0
+			line-height: 1
+		.contact-section_info_text
+			font-size: 15px
+			color: #5f5f5f
+			margin-top: 40px
+			width: 430px
+		.contact-section_info_adresses
+			maegin-top: 15px
+			span
+				margin-top: 25px
+				display: block
+				line-height: 1
+				strong
+					font-weight: 600
+
+
+		.contact-section_form
+			padding-bottom: 100px
+			.flex-container
+				display: flex
+				justify-content: space-between
+				margin-top: 4px
+			.name
+				width: 100%
+				height: 50px
+				margin-right: 30px
+				border: none
+				border-radius: 3px
+				&::placeholder
+					font-size: 14px
+					color: #858585
+					padding: 20px 22px
+			.email
+				width: 100%
+				height: 50px
+				border: none
+				border-radius: 3px
+				&::placeholder
+					font-size: 14px
+					color: #858585
+					padding: 20px 22px
+			.title
+				width: 100%
+				height: 50px
+				border: none
+				margin-top: 30px
+				border-radius: 3px
+				&::placeholder
+					font-size: 14px
+					color: #858585
+					padding: 20px 22px
+			.comment
+				width: 100%
+				border: none
+				margin-top: 30px
+				min-height: 170px
+				border-radius: 3px
+				&::placeholder
+					font-size: 14px
+					color: #858585
+					padding: 20px 22px
+			.submit-btn
+				margin-top: 30px
+				line-height: 1
+				text-transform: uppercase
+				padding: 22px 34px
+				border: none
+				background: #252525
+				color: #FFF
+				cursor: pointer
+				&:hover
+					background: rgba(0,0,0,.95)
+					transition: color .25s ease-in
+
+.main-footer
+	background: #0c0c0c
+	color: #FFF
+	padding-top: 95px
+	.wrapper
+		padding-bottom: 80px
+	.main-footer__about_heading
+		font-size: 20px
+		line-height: 1
+		font-family: "Playfair Display", sans-serif
+		font-weight: bold
+		margin: 0
+	.main-footer__about_text
+		font-family: "Playfair Display", sans-serif
+		margin-top: 35px
+		margin-bottom: 0
+		color: #e9e9e9
+		font-size: 15px
+	.main-footer__about_social
+		margin-top: 45px
+		a
+			margin-right: 14px
+			color: #FFF
+			&:hover
+				color: rgba(255,255,255, .8)
+				transition: color .25s ease
+	.main-footer__twits_heading
+		font-size: 20px
+		line-height: 1
+		font-family: "Playfair Display", sans-serif
+		font-weight: bold
+		margin: 0
+	.main-footer__twits_tewits-list
+		margin-top: 40px
+		font-size: 15px
+		color: #e9e9e9
+		padding-left: 2px
+		.twit
+			margin-top: 26px
+			&:before
+				content: "\f099"
+				font-family: "Font Awesome 5 Brands"
+				margin-right: 25px
+			&:first-child
+				margin-top: 0
+	.main-footer__instagram_heading
+		font-size: 20px
+		line-height: 1
+		font-family: "Playfair Display", sans-serif
+		font-weight: bold
+		margin: 0
+	.main-footer__instagram__grid-container
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr 1fr
+		grid-gap: 10px
+		margin-top: 45px
+		.main-footer__instagram_pic
+			width: 85px
+			height: 85px
+			background: #FFF
+			background-size: cover
+			background-position: center
+			&:hover
+				opacity: .8
+				cursor: pointer
+				transition: opacity .25s ease
+
+
+
+
+.copy
+	text-align: center
+	border-top: 1px solid #252525
+	small
+		padding: 30px 0
+		display: block
+		font-size: 14px
+
+
+
+
+
+
+
+@import "media" // Always at the end
