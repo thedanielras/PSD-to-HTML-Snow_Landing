@@ -114,6 +114,22 @@ li
 		padding: 5px
 		margin: 5px
 		display: inline-block
+		text-decoration: none
+		padding-bottom: 5px
+		margin-bottom: 10px
+		position: relative
+		&:before
+			position: absolute
+			top: 93%
+			left: 50%
+			content: ""
+			height: 4px
+			width: 0
+			background: #000
+		&:hover:before
+			transition: .2s ease-out
+			left: 0
+			width: 100%
 
 .main-header__text
 	position: absolute
@@ -183,7 +199,6 @@ li
 		display: flex
 		justify-content: space-between
 
-
 .numbers-section__card
 	padding-top: 120px
 	padding-bottom: 100px
@@ -234,7 +249,7 @@ li
 		&:hover
 			cursor: pointer
 			opacity: .9
-			transition: opacity .25 ease
+			transition: opacity .25s ease
 
 .projects-section__grid-container .middle-tile
 	background: #FFF
@@ -426,14 +441,13 @@ li
 			margin-top: 40px
 			width: 430px
 		.contact-section_info_adresses
-			maegin-top: 15px
+			margin-top: 15px
 			span
 				margin-top: 25px
 				display: block
 				line-height: 1
 				strong
 					font-weight: 600
-
 
 		.contact-section_form
 			padding-bottom: 100px
