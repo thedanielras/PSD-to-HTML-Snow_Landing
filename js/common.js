@@ -1,4 +1,42 @@
-	$(document).ready(function(){
+$(document).ready(function(){
+
+	/*----------------------------
+				PRELOADER
+  -----------------------------*/
+  
+  setTimeout(function() {	
+		$('#preloader').fadeOut(); 
+	}, 1000);
+
+	/*----------------------------
+	 SMOOTH SCROLL
+	-----------------------------*/
+
+	$("a").on('click', function(event) {
+		// Make sure this.hash has a value before overriding default behavior
+		if (this.hash !== "") {
+			// Prevent default anchor click behavior
+			event.preventDefault();
+
+			// Store hash
+			var hash = this.hash;
+
+			// Using jQuery's animate() method to add smooth page scroll
+			// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+			$('html, body').animate({
+				scrollTop: $(hash).offset().top
+			}, 800, function(){
+	
+				// Add hash (#) to URL when done scrolling (default click behavior)
+				window.location.hash = hash;
+			});
+		} // End if
+	});
+	
+	/*----------------------------
+				OWL-CAROUSEL INIT
+  -----------------------------*/
+
 		$(".owl-carousel").owlCarousel({
 			loop: true,
 			items: 1,
@@ -8,12 +46,20 @@
 			dotsContainer: ".owl-buttons"
 		});
 
+	/*----------------------------
+			HAMBURGER TOGGLE
+	-----------------------------*/
+
 		$(".hamburger, .anchor").click(function() {
 			$(".hamburger").toggleClass(" is-active");
 			$("body").toggleClass(" noflow");
 			$(".hamburger-inner").toggleClass(" is-black");
 			$(".main-nav").toggleClass(" show");
 		});
+
+	/*----------------------------
+		OWL-CAROUSEL INIT CLIENTS
+	-----------------------------*/
 
 		$(".clients-carousel").owlCarousel({
 			loop: true,
@@ -30,6 +76,10 @@
 				}
 			}
 		});
+
+	/*----------------------------
+	 OWL-CAROUSEL BLOG
+	-----------------------------*/
 		
 		$(".blog-section__blogpost-carousel").owlCarousel({
 			loop: false,
@@ -53,26 +103,4 @@
 				}
 			}
 		});
-
-		$("a").on('click', function(event) {
-			// Make sure this.hash has a value before overriding default behavior
-			if (this.hash !== "") {
-				// Prevent default anchor click behavior
-				event.preventDefault();
-
-				// Store hash
-				var hash = this.hash;
-
-				// Using jQuery's animate() method to add smooth page scroll
-				// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-				$('html, body').animate({
-					scrollTop: $(hash).offset().top
-				}, 800, function(){
-		
-					// Add hash (#) to URL when done scrolling (default click behavior)
-					window.location.hash = hash;
-				});
-			} // End if
-		});
-	
 });
