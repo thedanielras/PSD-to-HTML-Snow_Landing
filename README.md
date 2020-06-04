@@ -3,7 +3,7 @@ PSD to HTML practice, "Snow Template Landing" site markup.
 
 Technology used: HTML5 CSS JQuery Sass Gulp PostCss
 
-Watch online at: (https://seri0usdan.github.io/Web-Agency-Site/)
+Watch online @ https://thedanielras.github.io/Web-Agency-Site/
 
 ![Pricing Table][logo]
 
